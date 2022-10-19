@@ -1,6 +1,6 @@
 /* primary codes */
 
- :root {
+:root {
     --main-color: red;
 }
 
@@ -16,24 +16,21 @@ html {
 
 .container {
     margin: auto;
-    width: 971px;
 }
 
-@media (max-width: 991px) {
-    .container {
-        width: 750px;
-    }
+body {
+    width: 100%;
 }
 
-@media (max-width: 768px) {
+@media (min-width: 768px) and (max-width:1191px) {
     .container {
         width: 567px;
     }
 }
 
-@media (max-width: 576px) {
+@media (min-width: 1200px) {
     .container {
-        width: 80% !important;
+        width: 1171px;
     }
 }
 
@@ -49,7 +46,6 @@ ul {
 body {
     font-family: 'Montserrat', sans-serif;
     transition: 1s;
-    height: 5000px;
     background-color: #f5f5f5;
 }
 
@@ -134,6 +130,7 @@ header {
     left: 0;
     z-index: 5000;
     background-color: white;
+    padding: 0 15px;
 }
 
 header .container {
@@ -249,7 +246,7 @@ header .container nav .nav-ul .nav-list.active-link::after {
     }
     header .container nav {
         position: absolute;
-        top: 50px;
+        top: 40px;
         width: 100%;
         left: 0;
         height: 100%;
@@ -290,10 +287,14 @@ main {
     height: calc(100vh - 50.3px);
     width: 100%;
     margin-top: 50px;
-    background-color: rgba(0, 0, 0, .9);
     scale: 1;
     position: relative;
     overflow: hidden;
+    background-image: url(../images/landing3.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 main::after {
@@ -326,7 +327,6 @@ main .first-img {
         display: flex;
         justify-content: center;
         align-items: center;
-        width: 65%;
         height: 65vh;
         width: 80%;
         flex-direction: column;
@@ -427,12 +427,12 @@ main .overlay button:hover {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 65%;
+    width: 80%;
     height: 65vh;
     position: absolute;
     top: 50%;
     left: 40%;
-    transform: translate(-45%, -50%);
+    transform: translate(-48%, -50%);
     background-color: white;
     border-radius: 8px;
     padding: 66px 82px;
@@ -468,6 +468,19 @@ main .overlay button:hover {
     height: 700px;
     overflow: hidden;
     padding-top: 50px;
+    width: 975px;
+}
+
+@media (min-width:768px) and (max-width:991px) {
+    .about-team .container {
+        width: 650px;
+    }
+}
+
+@media (max-width:767px) {
+    .about-team .container {
+        width: 325px;
+    }
 }
 
 .about-team .heading {
@@ -590,15 +603,22 @@ main .overlay button:hover {
         background-color: #f6f6f6;
     }
     .about .container .about-con {
-        width: 100%;
+        width: 90%;
         height: 65vh;
         top: 50%;
         left: 40%;
-        transform: translate(-31%, -50%);
+        transform: translate(-40%, -50%);
         padding: 50px 50px;
     }
 }
 
+@media (max-width:786px) {
+    .about .container .about-con img {
+        transform: translate(-8%, -44%);
+    }
+}
+
+transform: translate(-8%, -44%);
 .gallary {}
 
 .gallary .gallary-cards {
@@ -607,6 +627,8 @@ main .overlay button:hover {
     gap: 50px;
     margin-top: 200px;
     opacity: .1;
+    width: 100%;
+    overflow: hidden;
     transition: 1s;
 }
 
@@ -614,26 +636,30 @@ main .overlay button:hover {
     display: flex;
     border-radius: 10px;
     overflow: hidden;
+    width: 95%;
+    margin-left: 10px;
 }
 
 .gallary .gallary-cards .gallary-card .gallary-card-info {
     width: 0%;
     transition: .3s;
     transform: skewY(90deg);
+    transform: scale(0);
 }
 
 .gallary .gallary-cards .gallary-card:hover .gallary-card-info {
     width: 50%;
-    transform: skewY(0deg);
+    transform: scale(1);
     z-index: -1;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    padding-left: 10px;
 }
 
 .gallary .gallary-cards .gallary-card img {
-    width: 100%;
+    width: 80%;
     position: relative;
     left: -5px;
     border-radius: 10px;
@@ -653,4 +679,66 @@ main .overlay button:hover {
 
 .gallary .gallary-cards .gallary-card .gallary-card-info p {
     color: #999;
+}
+
+
+/* start footer */
+
+footer {
+    width: 100%;
+    background-color: #304352;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 100px;
+    height: 250px;
+}
+
+footer h3 {
+    color: white;
+    font-weight: 400;
+    font-size: 20px;
+    letter-spacing: 2px;
+}
+
+footer span {
+    color: var(--main-color);
+    font-weight: bold;
+    font-style: italic;
+}
+
+footer ul {
+    display: flex;
+}
+
+footer i {
+    font-size: 40px;
+    margin-left: 15px;
+    font-weight: 400;
+    background-color: #e92f2f;
+    border-radius: 50%;
+    color: white;
+    width: 50px;
+    position: relative;
+    height: 50px;
+}
+
+footer i::before {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@media (max-width:786px) {
+    footer i {
+        font-size: 30px;
+        width: 40px;
+        height: 40px;
+    }
+    footer h3 {
+        font-size: 16px;
+        letter-spacing: 2px;
+    }
 }
